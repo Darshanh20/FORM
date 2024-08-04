@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .box{
+            background-color: whitesmoke;
+            height: 500px;
+            width: 500px;
+            margin: auto;
+            margin-top: 70px;
+            border: 10px solid rgb(219, 55, 82);
+        }
+        .heading h1{
+            background-color: whitesmoke;
+            justify-content: center;
+            display: flex;
+        }
+        .input {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            text-decoration: underline;
+            font-size: 25px;
+            width: 100%;
+            text-align: center;
+        }
+        .name, .email, .submit {
+            margin: 69px 0px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .submit input {
+            width: auto;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 10%;
+            border: none;
+            background-color: rgb(237, 115, 115);
+            font-size: 25px;
+        }
+        .submit input:hover{
+            background-color: rgb(252, 83, 83);
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <div class="box">
+            <input type="hidden" name="access_key" value="3e4e9d16-e114-409d-b3c5-c47e8d0f4bfc">
+            <div class="heading">
+                <h1>Connect With Me</h1>
+            </div>
+            <div class="name">
+                <input type="text" placeholder="Your name" class="input" name="name" required>
+            </div>
+            <div class="email">
+                <input type="email" placeholder="Your email id" class="input" name="email" required>
+            </div>
+            <div class="message">
+                <input type="text" name="message" class="input" placeholder="Write your message">
+            </div>
+            <div class="submit">
+                <input type="submit" placeholder="Your name" name="submit">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
