@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Form</title>
     <style>
-        body{
+        body {
             background-color: black;
         }
-        .box{
+
+        .box {
             background-color: whitesmoke;
             height: 500px;
             width: 500px;
@@ -16,11 +19,13 @@
             margin-top: 70px;
             border: 10px solid rgb(219, 55, 82);
         }
-        .heading h1{
+
+        .heading h1 {
             background-color: whitesmoke;
             justify-content: center;
             display: flex;
         }
+
         .input {
             outline: none;
             border: none;
@@ -30,12 +35,16 @@
             width: 100%;
             text-align: center;
         }
-        .name, .email, .submit {
+
+        .name,
+        .email,
+        .submit {
             margin: 69px 0px;
             width: 100%;
             display: flex;
             justify-content: center;
         }
+
         .submit input {
             width: auto;
             cursor: pointer;
@@ -46,12 +55,45 @@
             background-color: rgb(237, 115, 115);
             font-size: 25px;
         }
-        .submit input:hover{
+
+        .submit input:hover {
             background-color: rgb(252, 83, 83);
             transition: all 0.5s;
         }
+
+        .spin {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border: 10px solid grey;
+            border-top-color: rgb(60, 0, 255);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .load-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #242f3f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
+
 <body>
     <form action="https://api.web3forms.com/submit" method="POST">
         <div class="box">
@@ -73,5 +115,17 @@
             </div>
         </div>
     </form>
+    <div class="load-wrapper">
+        <div class="spin"></div>
+    </div>
+
+    <script>
+        $(window).on("load", function () {
+            setTimeout(function () {
+                $(".load-wrapper").fadeOut("slow");
+            }, 500);
+        });
+    </script>
 </body>
+
 </html>
